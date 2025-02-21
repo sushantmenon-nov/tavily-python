@@ -59,7 +59,7 @@ class TavilyClient:
         if kwargs:
             data.update(kwargs)
 
-        response = requests.post(self.base_url + "/search", data=json.dumps(data), headers=self.headers, timeout=100)
+        response = requests.post(self.base_url + "/search", data=json.dumps(data), headers=self.headers, timeout=100, verify=False)
 
         if response.status_code == 200:
             return response.json()
